@@ -2,7 +2,7 @@ module ProfileLearner
   def self.generate data
     attributes = ['Openness', 'Conscientiousness', 'Extroversion', 'Agreeableness', 'Neuroticism']
 
-    training = Profile.limit(300_000).each_with_object([]) do |profile, arr|
+    training = Profile.limit(250_000).each_with_object([]) do |profile, arr|
       arr << profile.profile_values.map(&:to_i)
     end
 
